@@ -14,7 +14,8 @@ def get_data():
 		if printDebug == 1: print "no input file found"
 		file = open("stats.txt", "w+")
 		file.close()
-
+	userName = "NAME"
+	userPassword = "PASSWORD"
 	getStats = 0
 	inDateNext = ""
 	inDateLast = ""
@@ -44,7 +45,7 @@ def get_data():
 		getStats = 1
 
 	if getStats == 1:
-		url="https://www.cogeco.ca/nwf/login/webuser/initiate.do?lang=en&region=on&userID=jmwalsh@cogeco.ca&password=Nk6RjsonJg"
+		url="https://www.cogeco.ca/nwf/login/webuser/initiate.do?lang=en&region=on&userID="+userName+"&"+userPassword
 		s = urllib.urlopen(url).read()
 	
 		soup = BeautifulSoup(s)
